@@ -20,3 +20,14 @@ jar {
         configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
     }
 }
+
+task startDB << {
+    javaexec {
+        main ="-jar"
+        args =  [
+                "./build/libs/db-init.jar",
+                "db/test",
+                "test"
+                ]
+    }
+}
