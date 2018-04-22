@@ -8,7 +8,7 @@ repositories {
 
 dependencies {
     def hsqldbVer = '2.4.0'
-    compile "org.hsqldb:hsqldb:${hsqldbVer}"
+    compile "org.hsqldb:hsqldb:$hsqldbVer"
 }
 
 jar {
