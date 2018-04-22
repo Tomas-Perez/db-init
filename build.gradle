@@ -1,0 +1,22 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    def hsqldbVer = '2.4.0'
+    compile "org.hsqldb:hsqldb:${hsqldbVer}"
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'init.DBInit'
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
