@@ -13,7 +13,6 @@ import java.io.PrintWriter;
 public class DBInit {
 
     public static void main(String[] args) throws Exception{
-        System.out.println("In main");
         if(args.length < 2)
             throw new Exception("Not enough arguments, database path and name are needed");
         init(args[0], args[1]);
