@@ -21,13 +21,15 @@ jar {
     }
 }
 
-task startDB << {
-    javaexec {
-        main ="-jar"
-        args =  [
-                "./build/libs/db-init.jar",
-                "db/test",
-                "test"
-                ]
+task startDB {
+    doLast{
+        javaexec {
+            main ="-jar"
+            args =  [
+                    "./build/libs/db-init.jar",
+                    "db/test",
+                    "test"
+            ]
+        }
     }
 }
